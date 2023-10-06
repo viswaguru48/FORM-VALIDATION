@@ -3,7 +3,7 @@ const form = document.getElementById("form");
 form.addEventListener('submit',e=>{
     e.preventDefault();
     output();
- })
+ });
 
 //first name
 let first = document.getElementById("firstname");
@@ -82,7 +82,7 @@ function val_email(){
         mailError.style.color = "red";
         mail.style.border = "1px solid red";
     }
-    else if(!email.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+    else if(!mail.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
         mailError.innerHTML = "Enter a valid email";
         mailError.style.color = "red";
         mail.style.border = "1px solid red";
@@ -174,3 +174,23 @@ function pincode(){
     }
 }
 
+function output(){
+    firstName = first.value.trim();
+    secondName = second.value.trim();
+    mobile = mobNum.value.trim();
+    emailid = mail.value.trim();
+    adrs = address.value.trim();
+    state = select.value.trim();
+    districtName = dist.value.trim();
+    pinCode = pin.value.trim();
+
+
+    document.write("Name: "+ firstName + " " + secondName + "<br>");
+    document.write("Mobile: " + mobile + "<br>");
+    document.write("Email: " + emailid + "<br>");
+    document.write("Address: " + adrs + "<br>");
+    document.write("State: " + state + "<br>");
+    document.write("District: " + districtName + "<br>");
+    document.write("Pin Code: " + pinCode + "<br>");
+
+}
